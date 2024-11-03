@@ -28,9 +28,7 @@ def capture_and_save_image(cap, save_path, image_directory):
 
         cv2.imwrite(save_path, frame)
         print("Image captured and saved successfully.")
-        
-
-        # cv2.destroyWindow("Capture Image")
+   
 
 
 reference_images = []
@@ -102,12 +100,11 @@ def update_video():
                     pass
             counter += 1
             if face_match:
-                # cv2.rectangle(frame, (20, 20), (620, 460), (0, 255, 0), 2)  # Example coordinates, adjust as needed
-                # cv2.putText(frame, "Authorized User", (20, 450), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 0), 3)
+                
                 not_match_count = 0
                 text = "USER AUTHORIZED"
             else:
-                # cv2.putText(frame, "NO MATCH!", (20, 450), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 3)
+                
                 if not_match_count > threshold:
                     color = (0, 0, 255)
                     text = "OUTSIDER"
